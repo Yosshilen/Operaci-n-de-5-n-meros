@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title> Cinco numeros </title>
+</head>
+<body>
+<h2> Operaciones de 5 Numeros</h2>
+	<script languaje="javascript">
+		var nro1;
+		var nro2;
+		var nro3;
+		var nro4;
+		var nro5;
+		var resultado;
+		var opc;
+		function calcular()
+		{
+			nro1=parseInt(document.form.num1.value);
+			nro2=parseInt(document.form.num2.value);
+			nro3=parseInt(document.form.num3.value);
+			nro4=parseInt(document.form.num4.value);
+			nro5=parseInt(document.form.num5.value);
+			opc=document.form.opcion.value;
+			switch(opc)
+			{
+				case "1":
+					var max=nro1;
+					if(nro2 > max){ max=nro2; }
+					if (nro3 > max ){ max=nro3;}
+					if (nro4 > max ){ max=nro4;}
+					if (nro5 > max ){ max=nro5;}
+					resultado=max;
+					break;			
+				case "2":
+					resultado=(nro1+nro2+nro3+nro4+nro5)/5;
+					break;	
+				case "3":
+					var min=nro1;
+					if(nro2 < min){ min=nro2; }
+					if (nro3 < min ){ min=nro3;}
+					if (nro4 < min ){ min=nro4;}
+					if (nro5 < min ){ min=nro5;}
+					resultado=min;
+					break;	
+				case "4":
+					var cont=0;
+					if(nro1 % 2==0){ cont=cont+1; }
+					if(nro2 % 2==0){ cont=cont+1; }
+					if(nro3 % 2==0){ cont=cont+1; }
+					if(nro4 % 2==0){ cont=cont+1; }
+					if(nro5 % 2==0){ cont=cont+1; }
+					resultado=cont;
+					break;		
+				case "5":
+					var cont=0;
+					if(nro1 % 2!=0){ cont=cont+1; }
+					if(nro2 % 2!=0){ cont=cont+1; }
+					if(nro3 % 2!=0){ cont=cont+1; }
+					if(nro4 % 2!=0){ cont=cont+1; }
+					if(nro5 % 2!=0){ cont=cont+1; }
+					resultado=cont;
+					break;	
+			}
+			document.form.result.value=resultado;
+		}				
+	</script>
+	
+	<form name="form">
+	
+		 Digitar numero 1: 
+		<input type = "text" id="num1" /> <br />
+		 Digitar numero 2: 
+		<input type = "text" id="num2" /> <br />
+		Digitar numero 3: 
+		<input type = "text" id="num3" /> <br />
+		 Digitar numero 4: 
+		<input type = "text" id="num4" /> <br />
+		Digitar numero 5: 
+		<input type = "text" id="num5" /> <br />
+		Seleccione la operacion:: 		
+		<select name="opcion">
+			<option value="1"> Numero mayor </option>
+			<option value="2"> Promedio </option>
+			<option value="3"> Numero menor </option>
+			<option value="4"> Numeros impares </option>
+			<option value="5"> Numeros pares </option>
+		</select> <br />
+		<input type = "button" value="CALCULAR" onclick="calcular()" />
+		<h3> Resultado: </h3>
+		<input type = "text" id="result" /> <br />
+	
+		
+	</form>
+	
+</body>
+</html>
